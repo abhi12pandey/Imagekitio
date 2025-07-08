@@ -17,7 +17,7 @@ export const authOptions: NextAuthOptions = {
           credentials: {
               email: { label: "Email", type: "text" },
               password:{label:"Password",type:"password"}
-          }
+          },
           //this credentials function used for  check wheteherr the mail and password is missing and throw an error ,used try and throw block 
           
           async authorize(credentials) {
@@ -77,7 +77,7 @@ export const authOptions: NextAuthOptions = {
                 token.id=user.id
             }
             return token;
-        }
+        },
         //session token
         async session({ session, token }) {
             if (session.user) {
