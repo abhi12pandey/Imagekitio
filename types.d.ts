@@ -1,4 +1,4 @@
-import { promises } from "dns";
+// import { promises } from "dns";
 import { Connection } from "mongoose";
 
 // declare globol varibale which check the connection and also aware if new coneection come

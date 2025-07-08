@@ -30,5 +30,5 @@ UserSchema.pre("save", async function (next) {
 //yha hook likh au ky method or event like save hota and other ek async fun define kiye basically wo pasword ko bcrypt krega simply thik hai
 
 // next js access different server if not find then create the model like we defin and follow
-const user = models?.user || model<IUser>("user", UserSchema);
-export default user;
+const User = models?.User || model<IUser>("User", UserSchema);
+export default User;

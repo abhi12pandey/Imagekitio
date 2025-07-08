@@ -11,4 +11,5 @@ declare module "next-auth" {
 }
 
 
-// this section just simply past from next auth nothing special 
+// this section just simply paste from next auth nothing special 
+//basically defiing auth

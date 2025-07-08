@@ -18,7 +18,7 @@ if (!cached) {
 
 //this fun check whete the conn is connected with database or not...
 //main crux of whole of data base
-export async function connectTodatabase() {
+export async function connectToDatabase() {
   if (cached.conn) {
     return cached.conn; //global inside i.e check types.d.ts easy understand we define global inside we placed conn,promise
   }
