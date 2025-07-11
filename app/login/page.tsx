@@ -2,7 +2,7 @@
 import { signIn } from 'next-auth/react';
 import { redirect, useRouter } from 'next/navigation';
 import React, { useState } from 'react'
-import dashboard from '../dashboard/page';
+// import dashboard from '/dashboard/page';
 import User from '@/moudel/User';
 
 function loginpage() {
