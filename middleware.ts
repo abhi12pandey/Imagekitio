@@ -40,8 +40,8 @@ export default withAuth(
 
 // this basically matcher what to show and what to no show the user...
 export const config = {
-    matcher:[
-        /*
+  matcher: [
+    /*
         *Match all request paths except:
         *- _next/static (static file)
         *- _next/image  (image optimization file)
@@ -51,7 +51,7 @@ export const config = {
 
 
         */
-        "((?._next/static|_next/image|favicon.ico|public/).*)",
-    ]
-}
+    "/((?!_next/static|_next/image|favicon.ico|public/).*)",
+  ],
+};
  //middleware is btn frontend and backend ,i.e frontend make client and backend break into api futher auth then middleware used to to run before this file file basically {code snippet}

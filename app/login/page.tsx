@@ -2,6 +2,8 @@
 import { signIn } from 'next-auth/react';
 import { redirect, useRouter } from 'next/navigation';
 import React, { useState } from 'react'
+import dashboard from '../dashboard/page';
+import User from '@/moudel/User';
 
 function loginpage() {
     const [email, setEmail] = useState("");
@@ -20,28 +22,41 @@ function loginpage() {
             console.log("error occur")
 
         }
+        
         else {
             
-            router.push("/")
+            router.push("/dashboard")
         }
+        
     }
 
 
   return (
+    <div>
+      <h1>login</h1>
+      <form onSubmit={handleSubmit}>
+        <input
+          type="email"
+          placeholder="email"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+        />
+        <input
+          type="password"
+          placeholder="Password"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+        />
+        <button type="submit">login</button>
+      </form>
       <div>
-          <h1>login</h1>
-          <form onSubmit={handleSubmit}>
-                <input type="email" placeholder="email" value={email}
-                    onChange={(e) => setEmail(e.target.value)} />
-              <input type="password" placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)} />
-              <button type="submit">Login</button>
-          </form>
-          <div>
-              don't have an account ?
+        don't have an account ?
               <button onClick={() => router.push("/register")}>Register</button>
+               
           </div>
+          
     </div>
-  )
+  );
 }
 
 export default loginpage

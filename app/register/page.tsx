@@ -58,7 +58,7 @@ function RegisterPage() {
     return (
 
 
-        //basically make the forntend part as register form 
+        //basically make the forntend part as register form
 
         <div>
             <h1>Register</h1>

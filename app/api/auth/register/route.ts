@@ -19,27 +19,29 @@ export async function POST(request: NextRequest) {
 
     //// connect to data base first check the datbase connection it is present or not ,if not then how we proceed to check whether the user is or not
 
-    await connectToDatabase();
-    const existingUser = await User.findOne({ email });
-    return NextResponse.json(
-      { error: "email already exist " },
-      {
-        status: 400,
-      }
-    );
+    await connectToDatabase()
+    const existingUser = await User.findOne({ email })
+    if (existingUser) {
+      return NextResponse.json(
+        { error: "email already exist " },
+        {
+          status: 400,
+        }
+      )
+    }
     //if not present the entry to data base t
 
     await User.create({
       email,
       password,
-    });
+    })
 
     return NextResponse.json(
-      { error: "email registered successfully" },
+      { message: "email registered successfully" },
       {
         status: 400,
       }
-    );
+    )
   } catch (error) {
     console.log("registration error", error);
     return NextResponse.json(
@@ -47,7 +49,7 @@ export async function POST(request: NextRequest) {
       {
         status: 400,
       }
-    );
+    )
   }
 }
 

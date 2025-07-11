@@ -1,4 +1,4 @@
-import mongoose from "mongoose";
+import mongoose from "mongoose"
 
 const MONGODB_URI = process.env.MONGODB_URI!;
 
@@ -28,13 +28,13 @@ export async function connectToDatabase() {
 
   if (!cached.promise) {
     const opts = {
-      buufferCommands: true,
+      bufferCommands: true,
       maxPoolSize: 10,
-    };
+    }
 
     //this will connect the databse mostly time we simply write this but for best practice we can use this try and catch block and throw an error if async function always use await for promise this come under whole database conn promise is on the way then await for the promise if an error then throw the error
 
-    mongoose.connect(MONGODB_URI, opts).then(() => mongoose.connection);
+    mongoose.connect(MONGODB_URI, opts).then(() => mongoose.connection)
   }
 
   // see line 39  or in one line async fun uses await
