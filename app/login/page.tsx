@@ -50,7 +50,7 @@ function loginpage() {
         <button type="submit">login</button>
       </form>
       <div>
-       <p>don't have an account ?</p> 
+       <p>don't have an account?</p> 
               <button onClick={() => router.push("/register")}>Register</button>
                
           </div>
